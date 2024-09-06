@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package calculation;
+
+// Definición del mensaje de solicitud con cuatro números
+message CalculationRequest {
+  int32 number1 = 1;
+  int32 number2 = 2;
+  int32 number3 = 3;
+  int32 number4 = 4;
+}
+
+// Definición del mensaje de respuesta
+message CalculationResponse {
+  int32 result = 1;
+}
+
+// Definición del servicio de cálculo
+service CalculationService {
+  rpc CalculateSum(CalculationRequest) returns (CalculationResponse);
+}
